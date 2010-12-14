@@ -12,7 +12,7 @@ My gentoo setup (the final cut as of early 2010):
 * stage3 tarball base, completely recompiled with optimized gcc flags
 * gentoo-sources patched with hibernate2 and reiser4 - manually compiled 
 * flux window manager with lightest and mostly cmdline based toolsets 
-    (the heaviest application I had was probably firefox and virtualbox)
+    the heaviest application I had was probably firefox and virtualbox
 
 Some of my favorites + frequently used
 admin: conky, sudo, syslog-ng
@@ -21,10 +21,45 @@ emulation: wine, virtualbox
 misc: screen 
 media: feh, gimp, xzgv, mpc, mpd, ncmpc, mplayer 
 net: arping, arpwatch, iptraf, netcat, nmap, tcpdump, traceroute, wireshark
-sys: cpufreqd, hibernate, vixie-cron, ntfs3g
+sys: cpufreqd, hibernate, vixie-cron, ntfs3g, grub
 www: firefox, links, lighttpd
 wm: fluxbox
 wm-misc: xbindkeys, xscreensaver, slim 
+
+# Make.conf 
+This file contains the settings for portage - Gentoo's package manager. 
+Typically I'll use -O3 (which will pull in tons of additional 
+optimizations), sse for float point arithmetics, and pipe (to avoid 
+using tmpfiles). This seems to be a solid and consistent setting for 
+both stable and unstable branch. Another interesting flag was 
+unroll-loops (or unroll-all-loops) which, as the name implies, peel or 
+unroll loops. I didn't notice any performance difference, but compile 
+time was longer. 
+
+# Compiling kernel
+One of the most interesting feature of Gentoo was building the kernel 
+from source. I know you can do that in any linux, but in Gentoo it's 
+recommended. There's genkernal which automate this process by detecting 
+your hardware. It will build everything as module and load them 
+dynamically at startup. But for the more adventurous, you build it by 
+hand. Most of modules in the kernel are well documented, you can read 
+about what it does and choose to include it or not. The first few 
+attempts your kernel will probably panic and fail to boot, but once you
+get it you'll have a really optimized kernel that will load up faster than 
+a speeding bullet.
+
+List of kernels I've tried: gentoo-sources, vanilla-sources, no-sources, reiser4-sources 
+viper-sources, mm-sources (and there are more unstable ones I used 
+briefly with custom schedulers that I don't remember right now). 
+
+Gentoo-sources is the default kernel as the name suggests, but people 
+will often choose other branches that have new features and 
+optimizations. I remember for quite a while the powers that be refused 
+to add reiserfs (claiming it broke certain linux fs standards) so my 
+kernel choice was heavily influenced by whether the kernel branch had 
+the filesystem I was looking for.Towards the end of my gentoo journey, I 
+settled in comfortably with gentoo-sources and just patched in anything 
+I needed (reiser4, hibernate2, etc). 
 
 
 Hardware specs for my third and last gentoo laptop 
