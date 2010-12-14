@@ -1,0 +1,37 @@
+# /etc/fstab: static file system information.
+#
+# noatime turns off atimes for increased performance (atimes normally aren't 
+# needed; notail increases performance of ReiserFS (at the expense of storage 
+# efficiency).  It's safe to drop the noatime options if you want and to 
+# switch between notail / tail freely.
+#
+# The root filesystem should have a pass number of either 0 or 1.
+# All other filesystems should have a pass number of 0 or greater than 1.
+#
+# See the manpage fstab(5) for more information.
+#
+
+# <fs>			<mountpoint>	<type>		<opts>		<dump/pass>
+
+# NOTE: If your BOOT partition is ReiserFS, add the notail option to opts.
+/dev/sda9		/boot		ext2		noauto,noatime		1 2
+/dev/sda2		/		ext4		noatime,relatime	0 1
+/dev/sda1		none		swap		sw			0 0
+/dev/sda3		/mnt/backups	ext4		noatime,noauto		0 0
+/dev/sda5		/home		ext4		noatime,defaults		0 0
+/dev/sda6		/mnt/ops	ext4		noatime,defaults		0 0
+/dev/sda7		/mnt/media	ext4		noatime,defaults		0 0
+/dev/sda8		/mnt/vm		ext4		noatime,defaults		0 0
+
+/dev/primary1		/mnt/delta1	ext4		noatime,defaults,noauto		0 0
+/dev/primary2		/mnt/delta2	ext4		noatime,defaults,noauto		0 0
+/dev/primary3		/mnt/delta3	ext4		noatime,defaults,noauto		0 0
+
+/dev/cdrom		/mnt/cdrom	auto		noauto,ro		0 0
+/dev/ipod		/mnt/ipod	auto		noauto,defaults		0 0
+
+# glibc 2.2 and above expects tmpfs to be mounted at /dev/shm for 
+# POSIX shared memory (shm_open, shm_unlink).
+# (tmpfs is a dynamically expandable/shrinkable ramdisk, and will
+#  use almost no memory if not populated with files)
+shm			/dev/shm	tmpfs		size=3G,nodev,nosuid	    0 0

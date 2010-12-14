@@ -1,0 +1,44 @@
+#
+# @author: kefei dan zhou
+# @date: 12-2010
+#
+
+While cleaning my digital archives, I stumpled upon the backup configs for the 
+gentoo system that got me through my bachelors degree @ UPenn.
+So I decided to jot down some notes and memories of a 5 year learning experience
+with one of the best linux os.
+
+My gentoo setup (the final cut as of early 2010):
+* stage3 tarball base, completely recompiled with optimized gcc flags
+* gentoo-sources patched with hibernate2 and reiser4 - manually compiled 
+* flux window manager with lightest and mostly cmdline based toolsets 
+    (the heaviest application I had was probably firefox and virtualbox)
+
+Some of my favorites + frequently used
+admin: conky, sudo, syslog-ng
+editors: nano, vim 
+emulation: wine, virtualbox
+misc: screen 
+media: feh, gimp, xzgv, mpc, mpd, ncmpc, mplayer 
+net: arping, arpwatch, iptraf, netcat, nmap, tcpdump, traceroute, wireshark
+sys: cpufreqd, hibernate, vixie-cron, ntfs3g
+www: firefox, links, lighttpd
+wm: fluxbox
+wm-misc: xbindkeys, xscreensaver, slim 
+
+
+Hardware specs for my third and last gentoo laptop 
+* Processor: Intel Core Duo (1.73 GHz/2MB L2 Cache) 
+* Hard Drive: 400GB WD Scorpio Blue harddrive 5400RPM 
+* Screen: 14.1" WXGA+ UltaSharp Widescreen with TrueLife (1440 x 900) 
+* Graphics: Intel Graphics Media Accelerator 950 (128MB Shared)
+* RAM: 4.0GB DDR2 SDRAM 
+* Optical Drive: 24x CD-RW/DVD-ROM 
+* Wireless: integrated 802.11 b/g (Broadcom)
+* Ports/Slots: 1 IEEE 1394 (FireWire), 4 Universal Serial Bus (USB 2.0), 
+    5-in-1 removable memory card reader, 
+    VGA monitor out port, S-video out, RJ-45 Ethernet LAN, RJ-11 modem, 
+    ExpressCard 54mm, headphone/speaker jack, microphone connector 
+
+
+

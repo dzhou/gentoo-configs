@@ -1,0 +1,4 @@
+event=button[ /]power.*
+action=/sbin/init 0
+#action=/usr/sbin/hibernate-ram -F /etc/hibernate/dell_e1405_suspend.conf
+

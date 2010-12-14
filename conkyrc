@@ -1,0 +1,77 @@
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+use_spacer none
+
+background              yes
+double_buffer           yes
+update_interval         1
+alignment               top_left
+gap_x                   10
+gap_y                   10
+no_buffers              yes
+minimum_size            250x400
+pad_percents            3
+font 			7x13
+use_xft 		yes
+xftfont 		mono:size=7
+max_port_monitor_connections 	16
+cpu_avg_samples 		4
+net_avg_samples 		4
+max_specials 			256
+
+color1	ffcb48
+color2	98c2c7
+color3	3399ff
+color4	000000	
+
+color8	0000ff
+color9	ffffff
+
+#${color1}Network Inbound: ${tcp_portmon 1 32767 count}  Outbound: ${tcp_portmon 32768 61000 count}
+#${color3}Inbound Connection ${alignr} Port$color
+# ${tcp_portmon 1 32767 rhost 0} ${alignr} ${tcp_portmon 1 32767 lservice 0}
+# ${tcp_portmon 1 32767 rhost 1} ${alignr} ${tcp_portmon 1 32767 lservice 1}
+# ${tcp_portmon 1 32767 rhost 2} ${alignr} ${tcp_portmon 1 32767 lservice 2}
+# ${tcp_portmon 1 32767 rhost 3} ${alignr} ${tcp_portmon 1 32767 lservice 3}
+#${color3}Outbound Connection ${alignr} Port$color
+# ${tcp_portmon 32768 61000 rhost 0} ${alignr} ${tcp_portmon 32768 61000 rservice 0}
+# ${tcp_portmon 32768 61000 rhost 1} ${alignr} ${tcp_portmon 32768 61000 rservice 1}
+# ${tcp_portmon 32768 61000 rhost 2} ${alignr} ${tcp_portmon 32768 61000 rservice 2}
+# ${tcp_portmon 32768 61000 rhost 3} ${alignr} ${tcp_portmon 32768 61000 rservice 3}
+
+#${font}${color9}Entropy ${entropy_avail}/${entropy_poolsize} ${entropy_bar 5}
+#${color9}${battery_bar 6}
+
+
+TEXT
+${font Arial Black:18}${color4}$nodename ${color9}$sysname $kernel
+${font}${color4}CPU1 ${color9}${cpu cpu1}% ${freq cpu1}MHz	${color4}CPU2 ${color9}${cpu cpu2}% ${freq cpu2}MHz
+${color9}${cpubar cpu1 6,170} ${cpubar cpu2 6,170}
+${color9}${cpugraph cpu1 32,170 000000 ffffff} ${cpugraph cpu2 32,170 000000 000000}
+${color4}Processes:${color9}$processes ${color}Running:${color9} $running_processes ${color9}Temp: ${color9}${acpitemp}C
+
+${color4}Swap ${color9}$swap / $swapmax ${swapbar}
+${color4}Root ${color9}${fs_used /} / ${fs_size /} ${color9}${fs_bar /}
+${color4}Home ${color9}${fs_used /home} / ${fs_size /home} ${color9}${fs_bar /home}
+${color4}ops ${color9}${fs_used /mnt/ops/} / ${fs_size /mnt/ops/} ${color9}${fs_bar /mnt/ops/}
+${color9}${diskiograph_read 32,170 000000 000000} ${diskiograph_write 32,170 000000 000000}
+${color9}IO Read: ${diskio_read}  IO Write: ${diskio_write}
+
+${color4}Name             PID     CPU%   MEM%
+${color9} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color9} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color9} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color4}Mem usage
+${color9} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+${color9} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${color9} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+
+${color4}Ethernet ${color9}${addr eth0}
+${color9}Down:${color9} ${downspeed eth0} k/s${color9}${offset 80}Up:${color9} ${upspeed eth0} k/s
+${color9}${downspeedgraph eth0 32,150 000000 ffffff} ${color9}${upspeedgraph eth0 32,150 ffffff ffffff}
+
+${color4}Wireless ${color9}${addr wlan0}
+${color9}Down:${color9} ${downspeed wlan0} k/s${color9}${offset 80}Up:${color9} ${upspeed wlan0} k/s
+${color9}${downspeedgraph wlan0 32,150 000000 ffffff} ${color9}${upspeedgraph wlan0 32,150 ffffff ffffff}
