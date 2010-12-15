@@ -55,14 +55,12 @@ remember right now).
 
 Gentoo-sources is the default kernel as the name suggests, but people 
 will often choose other branches that have new features and 
-optimizations. I remember for quite a while the powers that be refused 
-to add reiser4 to this day (claiming it broke certain linux fs 
-standards) so my kernel choice was heavily influenced by whether the 
-kernel branch had the filesystem I was looking for.Towards the end of my 
+optimizations. My kernel choice was heavily influenced by whether the 
+kernel branch had the features I was looking for such as the latest 
+filesystem. Even to this day the powers that be refuse to add Reiser4 to 
+main (claiming it broke certain linux standards). Towards the end of my 
 gentoo journey, I settled in comfortably with gentoo-sources and just 
 patched in anything I needed (reiser4, hibernate2, etc). 
-
-
 
 
 Hardware specs for my third and last gentoo laptop 
