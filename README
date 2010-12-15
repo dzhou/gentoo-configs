@@ -48,18 +48,21 @@ attempts your kernel will probably panic and fail to boot, but once you
 get it you'll have a really optimized kernel that will load up faster than 
 a speeding bullet.
 
-List of kernels I've tried: gentoo-sources, vanilla-sources, no-sources, reiser4-sources 
-viper-sources, mm-sources (and there are more unstable ones I used 
-briefly with custom schedulers that I don't remember right now). 
+List of kernels I've tried: gentoo-sources, vanilla-sources, no-sources, 
+reiser4-sources, viper-sources, mm-sources, ck-sources, (and there are 
+more unstable ones I used briefly with custom schedulers that I don't 
+remember right now). 
 
 Gentoo-sources is the default kernel as the name suggests, but people 
 will often choose other branches that have new features and 
 optimizations. I remember for quite a while the powers that be refused 
-to add reiserfs (claiming it broke certain linux fs standards) so my 
-kernel choice was heavily influenced by whether the kernel branch had 
-the filesystem I was looking for.Towards the end of my gentoo journey, I 
-settled in comfortably with gentoo-sources and just patched in anything 
-I needed (reiser4, hibernate2, etc). 
+to add reiser4 to this day (claiming it broke certain linux fs 
+standards) so my kernel choice was heavily influenced by whether the 
+kernel branch had the filesystem I was looking for.Towards the end of my 
+gentoo journey, I settled in comfortably with gentoo-sources and just 
+patched in anything I needed (reiser4, hibernate2, etc). 
+
+
 
 
 Hardware specs for my third and last gentoo laptop 
